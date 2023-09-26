@@ -1,0 +1,96 @@
+h1 {
+  text-align: center;
+  line-height: 80px;
+  border-bottom: 2px solid lightgray;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  .left-block,
+  .right-block {
+    width: 700px;
+    padding: 1%;
+  }
+  .left-block {
+    label {
+      line-height: 40px;
+    }
+    input {
+      height: 40px;
+      width: 100%;
+      border-radius: 3px;
+      border: 1px solid grey;
+      outline: none;
+      padding: 10px; 
+    }
+  }
+   .defaultInput {
+      border: blue;
+      box-shadow: 0 0 3px 2px lightskyblue;
+    }
+  .correctInput {
+    border: green;
+    box-shadow: 0 0 3px 2px lightgreen;
+  }
+  .incorrectInput {
+    border: red;
+    box-shadow: 0 0 3px 2px lightpink;
+  }
+  #addUserBtn,
+  #editUserBtn {
+    margin-top: 40px;
+    width: 100%;
+    color: white;
+    background-color: green;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    &:hover {
+      border: green;
+      box-shadow: 0 0 3px 2px lightgreen;
+      font-size: 21px;
+    }
+  }
+  #editUserBtn{
+    background-color: rgb(28, 125, 28);
+  }
+}
+.right-block {
+  padding-top: 50px;
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    thead {
+      border-top: 1px solid grey;
+      border-bottom: 2px solid grey;
+    }
+    th {
+      text-align: left;
+      height: 50px;
+    }
+    tr {
+      height: 40px;
+    }
+    button {
+      height: 30px;
+      padding: 0 10px;
+      border-radius: 2px;
+      border: none;
+      &:hover {
+        box-shadow: 0 0 3px 0 grey;
+      }
+    }
+    #editTableBtn {
+      background-color: darkkhaki;
+    }
+    #deleteTableBtn {
+      background-color: red;
+      color: white;
+    }
+  }
+}

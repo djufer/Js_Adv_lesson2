@@ -1,0 +1,72 @@
+<h1>Angular users task</h1>
+<div class="container">
+  <div class="left-block">
+    <label for="inpLogin">Login</label>
+
+    <input
+      type="text"
+      id="inpLogin"
+      [(ngModel)]="inputLogin"
+      [ngClass]="classForLog"
+      (focus)="focusedLogInput()"
+      (input)="isWarningLog()"
+    />
+
+    <label for="inpPassword">Password</label>
+    <input
+      type="text"
+      id="inpPassword"
+      [(ngModel)]="inputPassword"
+      [ngClass]="classForPassw"
+      (focus)="focusedPasswInput()"
+      (input)="isWarningPassw()"
+    />
+    <label for="inpEmail">Email address</label>
+    <input
+      type="text"
+      id="inpEmail"
+      [(ngModel)]="inputEmail"
+      [ngClass]="classForEm"
+      (focus)="focusedEmailInput()"
+      (input)="isWarningEm()"
+    />
+    <button id="addUserBtn" *ngIf="showAddUserBtn" (click)="addUser()">
+      Add user
+    </button>
+    <button
+      id="editUserBtn"
+      *ngIf="!showAddUserBtn"
+      (click)="editRow(); hideEditBtn()"
+    >
+      Save edit user
+    </button>
+  </div>
+  <div class="right-block">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Login</th>
+          <th>Password</th>
+          <th>Email</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of arrAll; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.login }}</td>
+          <td>{{ item.password }}</td>
+          <td>{{ item.email }}</td>
+          <td>
+            <button id="editTableBtn" (click)="showEditBtn(i)">Edit</button>
+          </td>
+          <td>
+            <button id="deleteTableBtn" (click)="deletRow(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
